@@ -7,7 +7,11 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+      user-mail-address "john@doe.com"
+      web-mode-markup-indent-offset 2
+      web-mode-code-indent-offset 2
+      web-mode-css-indent-offset 2
+      )
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -52,4 +56,18 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(add-hook 'vue-mode-hook #'lsp!)
+;;
+;; Vuejs
+(after! web-mode
+  ;;(setq
+   ;;lsp-vetur-validation-template nil
+   ;;lsp-vetur-completion-use-scaffold-snippets nil))
+  ;; set vue style/script indent to 0
+  (defun custom-web-mode-hook ()
+    "Hooks for Web mode."
+    (setq
+      web-mode-style-padding 0
+      web-mode-script-padding 0
+     )
+    )
+  (add-hook 'web-mode-hook 'custom-web-mode-hook))
