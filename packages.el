@@ -49,4 +49,6 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 (package! nvm)
+(package! prettier-js)
+(package! add-node-modules-path)
 ;; (package! vue-mode)
