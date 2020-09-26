@@ -29,12 +29,14 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
-(setq doom-font (font-spec :family "JetBrains Mono" :size 14))
-
+(setq doom-theme 'doom-monokai-spectrum)
+(setq doom-font (font-spec :family "Menlo" :size 14))
+(setq doom-variable-pitch-font (font-spec :family "Avenir Next" :size 14))
+(setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -60,10 +62,6 @@
 ;;
 ;; Vuejs
 (after! web-mode
-  ;;(setq
-   ;;lsp-vetur-validation-template nil
-   ;;lsp-vetur-completion-use-scaffold-snippets nil))
-  ;; set vue style/script indent to 0
   (defun custom-web-mode-hook ()
     "Hooks for Web mode."
     (setq
